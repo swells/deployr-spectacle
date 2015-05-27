@@ -282,6 +282,13 @@ Example:
    width="400"
    height="400">
 </deployr-plot>
+
+<deployr-plot 
+   rscript="RUGclusters" 
+   routput="plot"
+   width="400"
+   height="400">
+</deployr-plot>
 ```
 
 ## R Scripts used
@@ -317,14 +324,14 @@ if (density) {
 
 #### Inputs
 
-- *n_breaks* _numeric_
-- *individual_obs* _logical_
-- *density* _logical_
-- *bw_adjust* _numeric_
+- **n_breaks** _numeric_
+- **individual_obs** _logical_
+- **density** _logical_
+- **bw_adjust** _numeric_
 
 #### Outputs
 
-- Plot
+- **Plot** _PNG_
 
 ### RUGclusters.R
 
@@ -369,9 +376,9 @@ dat_geo <- toGeoJSON(data=rug, name="RRevoRUGS_2014")
 
 #### Inputs
 
-- *nclus* _numeric_
+- **nclus** _numeric_
 
 #### Outputs
 
-- *RRevoRUGS_2014* _geoJSON file_
-- *summary* _data.frame_
+- **RRevoRUGS_2014** _geoJSON file_
+- **summary** _data.frame_

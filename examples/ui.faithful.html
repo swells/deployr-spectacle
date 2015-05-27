@@ -1,17 +1,11 @@
+<!--
+  - To use rename file to `ui.html` and place it in `/mlds-demo/ui/ui.html`
+  -->
 <template>
    <link rel="stylesheet" href="ui.css">
    <deployr-server endpoint="http://166.78.105.110:7400" cors="true"></deployr-server>
    <!--<deployr-server endpoint="http://10.145.1.237:7400" cors="true"></deployr-server>-->
     
-   <deployr-rscript 
-      name="RUGclusters" 
-      author="sheri" 
-      directory="geo" 
-      inputs="nclust" 
-      outputs="RRevoRUGS_2014,summary"
-      runOnload="true">
-   </deployr-rscript>
-
    <deployr-rscript 
       name="faithful" 
       author="swells" 
@@ -20,37 +14,6 @@
       outputs="plot"
       runOnload="true">
    </deployr-rscript>    
-
-   <deployr-dropdown-menu 
-        rscript="RUGclusters" 
-        rinput="nclus" 
-        rtype="numeric" 
-        watch="true"
-        label="K-Means Cluster Analysis"
-        selected="5"
-        items='{ "labels": [1, 2, 3, 4, 5], "values": [1, 2, 3, 4, 5] }' >
-   </deployr-dropdown-menu>    
-
-   <br>
-
-   <leaflet-map longitude="-96.6" latitude="39.5" zoom="3">
-      <deployr-leaflet-tilelayer 
-         rscript="RUGclusters"
-         routput="RRevoRUGS_2014"
-         fitBounds="false"
-         pointToLayer="{{pointToLayerHandler}}"
-         onEachFeature="{{onEachFeatureHandler}}">            
-      </deployr-leaflet-tilelayer>       
-   </leaflet-map>
-   
-   <br>
-
-   <deployr-table
-     rscript="RUGclusters"
-     routput="summary">
-   </deployr-table>
-
-   <br>
 
    <deployr-dropdown-menu 
         rscript="faithful" 

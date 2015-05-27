@@ -317,10 +317,10 @@ if (density) {
 
 #### Inputs
 
-- n_breaks _numeric_
-- individual_obs _logical_
-- density _logical_
-- bw_adjust _numeric_
+- *n_breaks* _numeric_
+- *individual_obs* _logical_
+- *density* _logical_
+- *bw_adjust* _numeric_
 
 #### Outputs
 
@@ -337,7 +337,7 @@ if (density) {
 ```R
 # population data from http://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?src=bkmk
 
-rug<-read.csv("http://166.78.105.110:7400/apps/csv/rug2014us.csv", stringsAsFactors=F)
+rug<-read.csv("10.145.1.237:7400/apps/csv/rug2014us.csv", stringsAsFactors=F)
 #drop out ID column
 rug<-rug[,2:13]
 
@@ -369,9 +369,9 @@ dat_geo <- toGeoJSON(data=rug, name="RRevoRUGS_2014")
 
 #### Inputs
 
-- nclus _numeric_
+- *nclus* _numeric_
 
 #### Outputs
 
-- RRevoRUGS_2014 _geoJSON file_
-- summary _data.frame_
+- *RRevoRUGS_2014* _geoJSON file_
+- *summary* _data.frame_

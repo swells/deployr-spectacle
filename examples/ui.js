@@ -1,3 +1,6 @@
+/*
+ * To use copy `ui.js` it to `/mlds-demo/ui/ui.js`
+ */
 var ui = {
     /* Bind functions and values */
     ready: function() {

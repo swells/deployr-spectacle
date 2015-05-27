@@ -111,7 +111,6 @@ authentication and R Session orchestration.
 ```
 
 Example:
-
 ```html
 <deployr-server endpoint="http://dhost:7400" cors="true"></deployr-server>
 

@@ -334,7 +334,6 @@ if (density) {
   cluster
 - Slider changes the number of clusters which updates both map and graph
 
-
 ```R
 # population data from http://factfinder.census.gov/faces/tableservices/jsf/pages/productview.xhtml?src=bkmk
 

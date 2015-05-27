@@ -10,6 +10,7 @@
 leaflet-map {
     border: 1px solid #aaa;
     height: 380px;
+    height: 250px;
     max-width: 400px;
 }
 /* left panel body */

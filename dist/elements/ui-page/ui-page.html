@@ -1,3 +1,5 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<polymer-element name="ui-page">
 <template>
     <link rel="stylesheet" href="ui.css">
     <deployr-server endpoint="http://166.78.105.110:7400" cors="true"></deployr-server>
@@ -8,3 +10,16 @@
       -->
     <deployr-default></deployr-default>
 </template>
+<script>var ui = {
+    /* Bind additional functions and values to the UI */
+
+    /*
+     * Element lifecycle method
+     */
+    ready: function() {},
+
+    hello: 'Hello!'
+};
+Polymer("ui-page", ui);
+</script>
+</polymer-element>

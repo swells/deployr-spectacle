@@ -1,8 +1,14 @@
-# DeployR R Analytics Integration
+# DeployR - R Analytics Integration
 
 Example POC that uses HTML5 [Web Components](http://webcomponents.org/) to Declaratively bind DeployR enabled 
 R Scripts and R Code blocks to the UI. Elements can be composed to create more
 complicated R Analytic web applications without needing to know JavaScript/CSS/HTML.
+
+Here are some samples deployed to Azure Web Sites:
+
+- [http://mlds-scaffold.azurewebsites.net/](http://mlds-scaffold.azurewebsites.net/)
+- [http://mlds-r-user-groups.azurewebsites.net/](http://mlds-r-user-groups.azurewebsites.net/)
+- [http://mlds-faithful.azurewebsites.net/](http://mlds-faithful.azurewebsites.net/)
 
 ## Prerequisites
 
@@ -11,11 +17,11 @@ complicated R Analytic web applications without needing to know JavaScript/CSS/H
 ## Quick start
 
 0. Install [Node.js](http://nodejs.org/) 
-1. ```$ git clone https://github.com/deployr/mlds-demo.git```
-2. ```$ cd mlds-demo```
+1. ```$ git clone https://github.com/mlds-deployr/mlds-ui-demo.git```
+2. ```$ cd mlds-ui-demo```
 3. ```$ npm install```
 4. ```$ npm run serve```
-5. Open `mlds-demo/ui/ui.html` in your editor and begin editing Web Components and [experimenting](#experimenting)
+5. Open `mlds-ui-demo/ui/ui.html` in your editor and begin editing Web Components and [experimenting](#experimenting)
 6. View changes in [http://localhost:3000/#/](http://localhost:3000/#/)
 
 ## Installation
@@ -23,33 +29,52 @@ complicated R Analytic web applications without needing to know JavaScript/CSS/H
 #### Github
 
 ```
-$ git clone https://github.com/deployr/mlds-demo.git
+$ git clone https://github.com/mlds-deployr/mlds-ui-demo.git
 ```
 
 #### Without Github
 
-Alternatively you can just download and explode the [repository zip bundle](https://github.com/deployr/mlds-demo/archive/master.zip).
-
+Alternatively you can just download and explode the [repository zip bundle](https://github.com/mlds-deployr/mlds-ui-demo/archive/master.zip).
 
 Installation is managed via [npm](http://npmjs.org), the [Node.js](http://nodejs.org/) package manager.
 
 One-line install using [npm](http://npmjs.org):
 
 ```
-$ cd mlds-demo
+$ cd mlds-ui-demo
 $ npm install
 ```
 
 ## Run
 
 ```
-$ cd mlds-demo
+$ cd mlds-ui-demo
 $ npm run serve
 ```
 
 This will start a local web-server and launch your browser pointing to [http://localhost:3000](http://localhost:3000/#/)
 
+## Build and Deploy
+
+```
+$ cd mlds-ui-demo
+$ npm run build
+```
+
+This produces the `dist/` directory which contains a production ready web application
+equipped with JavaScript obfuscation, css minimization, image minimization, html minimization, ect...
+
+For deployment, you can easily put the content in `dist/` onto any web-server or create an [Azure Website](http://azure.microsoft.com/en-us/services/app-service/web/) out of it. 
+
+
 ## Experimenting
+
+### Samples/Examples
+
+See the `mlds-ui-demo/examples` for samples. Rename samples to `ui.html` and place
+in the `mlds-ui-demo/ui` to view.
+
+### The structure of the `ui` directory:
 
 The `ui` directory contains files that you can *edit*.
 

@@ -1,6 +1,7 @@
 node_modules
-dist
+lldist
 test/temp
 .sass-cache
 .tmp
 test/bower_components/
+npm-debug.log

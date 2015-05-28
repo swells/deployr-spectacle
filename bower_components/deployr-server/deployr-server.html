@@ -1,10 +1,15 @@
-<link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../deployr-globals/deployr-globals.html">
 <!--
+  Copyright (C) 2010-2015 by Revolution Analytics Inc.
+  Released under the Apache License 2.0
+  http://www.apache.org/licenses/LICENSE-2.0
+-->
+<!--
+@group DeployR Elements
 @element deployr-server
 @status POC
-@homepage github.io
 -->
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../deployr-globals/deployr-globals.html">
 <polymer-element name="deployr-server" hidden attributes="endpoint cors auth">
     <template>
         <deployr-globals id="rscript" on-deployr-globals-input="{{rinputChange}}"></deployr-globals>
@@ -57,7 +62,7 @@
     }
 
     function rcodeExecute(rcode, fn) {
-        request = request.io('/r/project/execute/code');
+        request = request.code(rcode.data.code);
 
         // Attache DeployR encoded rinputs           
         for (var input in rcode.inputs) {
@@ -66,16 +71,18 @@
             } catch (err) {}
         }
 
+        var project;
         request
             .data(rcode.data)
             .routputs(Object.keys(rcode.outputs))
             .end(function(res) {
                 responseToModel(rcode, res);
                 fn(res);
-                return {
-                    project: res.get('project').project
-                };
+                project = res.get('project').project;
             })
+            .ensure(function() {
+                request.release([project], true)
+            });
     }
 
     function rscriptExecute(rscript, fn) {
@@ -91,10 +98,11 @@
                 });
         }
 
-        //request = request.io(api);
-
-        request = deployr.io(api);
-
+        if (rscript.auth) {
+            request = request.io(api);
+        } else {
+            request = deployr.io(api);
+        }
 
         // DeployR encoded rinputs           
         for (var input in rscript.inputs) {
@@ -195,8 +203,6 @@
                     },
 
                     401: function() {
-                        //document.querySelector('app-router').go('/login');
-                        //self.querySelector('::shadow app-router').go('/login');
                         window.location.assign('/#/login');
                     }
                 }

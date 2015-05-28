@@ -4,5 +4,7 @@ var ui = {
     /*
      * Element lifecycle method
      */
-    ready: function() {}
+    ready: function() {},
+
+    hello: 'Hello!'
 };

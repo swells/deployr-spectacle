@@ -1,7 +1,0 @@
-node_modules
-lldist
-test/temp
-.sass-cache
-.tmp
-test/bower_components/
-npm-debug.log
